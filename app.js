@@ -8,14 +8,17 @@ const inputPeople = document.querySelector('#numberOfPeople');
 const outputPerson = document.querySelector('#personAmount');
 const outputTotal = document.querySelector('#totalAmount');
 const tipBtn = document.querySelector('.tipValues');
-const customTipBtn = document.querySelector('#customValue')
+const customTipBtn = document.querySelector('#customValue');
+const resetBtn = document.querySelector('#reset');
 
 // declare event listeners for input fields
 inputBill.addEventListener('input', checkInputBill);
 inputPeople.addEventListener('input', checkInputPeople);
 tipBtn.addEventListener('click', selectTip);
 customTipBtn.addEventListener('input', customTip);
+resetBtn.addEventListener('click', resetAllInputs)
 
+// declare event listerners for clicks on inputs
 inputBill.addEventListener('click', resetInput);
 inputPeople.addEventListener('click', resetInput);
 
@@ -25,6 +28,13 @@ document.querySelector('input[type="button"]').click();
 
 function resetInput(e){
     e.target.value = '';
+}
+
+function resetAllInputs(){
+    inputBill.value = '40';
+    inputPeople.value = '1';
+    document.querySelector('input[type="button"]').click();
+    setOutput();
 }
 
 function checkInputBill(e){
@@ -52,11 +62,14 @@ function checkInputPeople(e){
 
 
 function alarm(element){
-    console.log(element.parentElement);
     const label = `<label for="presetValue" class="alarm">Can't be zero.</label>`;
     element.parentElement.insertAdjacentHTML('beforebegin', label);
-    console.log(document.querySelector('.alarm'))
+    console.log(element.parentElement.parentElement)
     element.classList.add('ifZero');
+    startTimer(element);
+}
+
+function startTimer(element){
     setTimeout(function(){
         document.querySelector('.alarm').remove();
         element.classList.remove('ifZero');
