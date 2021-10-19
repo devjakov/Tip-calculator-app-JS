@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="normalize.css">
+  <link rel="stylesheet" href="style.css">
   
   <title>Frontend Mentor | Tip calculator app</title>
 
@@ -13,32 +15,77 @@
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
+  
+  <script src="app.js" defer></script>
 </head>
 <body>
 
-  Bill
+  <div class="logo">
+    <img src="images/logo.svg" alt="">
+  </div>
 
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
+  <div class="container">
 
-  Number of People
+      <form id="appInput">
+        <label for="selectTip">Bill</label> 
+        <div class="iconHolder">
+          <img src="images/icon-dollar.svg" alt="">
+        <input type="number" id="bill" value="40">
+      </div> 
 
-  Tip Amount
-  / person
+      <label for="presetValue">Select Tip %</label>  
+      <div class="tipValues">
+        <input type="button" class="presetValue" value="5%">
+        <input type="button" class="presetValue" value="10%">  
+        <input type="button" class="presetValue" value="15%">  
+        <input type="button" class="presetValue" value="25%">  
+        <input type="button" class="presetValue" value="50%">
+        <input type="number" class="presetValue" id="customValue" placeholder="Custom">    
+      </div>
 
-  Total
-  / person
+      <label for="numberOfPeople">Number of People</label> 
+      <div class="iconHolder">
+        <img src="images/icon-person.svg" alt="">
+      <input type="number" id="numberOfPeople" value="1">
+      </div> 
+    </form>
 
-  Reset
-  
-  <div class="attribution">
+    <div class="results">
+
+      <div class="results-1">
+        <div class="amountDescription">
+          <p>Tip Amount</p>  
+          <p>/ person</p> 
+        </div>
+        <div class="output">
+          <h1 id="personAmount">$5</h1>
+        </div>
+      </div>
+      
+
+    <div class="results-2">
+      <div class="amountDescription">
+        <p>Total</p>  
+        <p>/ person</p> 
+      </div>
+        <div class="output">
+          <h1 id="totalAmount">$30</h1>
+        </div>
+      </div>
+
+      <div class="reset">
+        <button id="reset">Reset</button> 
+      </div>
+      
+
+    </div>
+
+  </div>
+
+ 
+  <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
-  </div>
+  </div> -->
 </body>
 </html>

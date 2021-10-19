@@ -1,0 +1,287 @@
+/* # Front-end Style Guide
+
+## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+## Colors
+
+### Primary
+
+- Strong cyan: hsl(172, 67%, 45%)
+
+### Neutral
+
+- Very dark cyan: hsl(183, 100%, 15%)
+- Dark grayish cyan: hsl(186, 14%, 43%)
+- Dark grayish cyan: hsl(184, 14%, 56%)
+- Light grayish cyan: hsl(185, 41%, 84%)
+- Light grayish cyan: hsl(189, 41%, 97%)
+- White: hsl(0, 0%, 100%)
+
+## Typography
+
+### Body Copy
+
+- Font size (form inputs): 24px
+
+### Font
+
+- Family: [Space Mono](https://fonts.google.com/specimen/Space+Mono)
+- Weights: 400, 500, 700 */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+
+
+/* Declaring stuff I will be using */
+html {
+    /* ### Primary */
+
+--Strongcyan: hsl(172, 67%, 45%);
+
+/* ### Neutral */
+
+--Verydarkcyan: hsl(183, 100%, 15%);
+--Darkgrayishcyan1: hsl(186, 14%, 43%);
+--Darkgrayishcyan2: hsl(184, 14%, 56%);
+--Lightgrayishcyan1: hsl(185, 41%, 84%);
+--Lightgrayishcyan2: hsl(189, 41%, 97%);
+--White: hsl(0, 0%, 100%);
+
+font-family: "Space Mono", sans-serif;
+font-size: 16px;
+}
+
+/* Make sure no weird stuff happens with my alignments */
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--Lightgrayishcyan1);
+}
+
+
+
+/* Setting up the logo in the middle */
+.logo{
+    margin: auto;
+    display: flex;
+    height: 8rem;
+}
+
+.logo img{
+    margin: auto;
+}
+
+
+
+/* Setting up the container which will hold the app */
+.container{
+    background-color: var(--Lightgrayishcyan2);
+    border-radius: 2rem 2rem 0 0;
+    height: 840px;
+    width: 375px;
+    margin:auto;
+}
+
+#appInput {
+    padding: 2rem;
+    padding-top: 3rem;
+    font-size: 1rem;
+    padding-bottom: 0;
+}
+
+
+
+/* Just to make all the input text start from the right and look nice  */
+input{
+    text-align: right;
+    font-size: 24px;
+    border: none;
+    background-color: hsl(185, 41%, 91%);
+    padding: .5rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    color: var(--Verydarkcyan);
+}
+
+input[type="button"]{
+    background-color: var(--Verydarkcyan);
+    color: white;
+}
+
+label{
+    font-weight: 700;
+    color: var(--Darkgrayishcyan1);
+}
+
+
+
+/* this makes sure i can put icons inside inputs with absolute */
+.iconHolder{
+    position: relative;
+    
+}
+
+/* this is for the dollar and person icon inside the inputs  */
+.iconHolder img {
+    width: 5%;
+    position: absolute;
+    top: 28px;
+    left: 16px;
+}
+
+/* this one just makes sure the dollar sign is perfect hehe */
+.iconHolder:nth-child(2) img {
+    width: 5%;
+    position: absolute;
+    top: 26px;
+    left: 16px;
+}
+
+.tipValues {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem 1.25rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.presetValue {
+    margin:0;
+    padding: .75rem;
+    text-align: center;
+    border-radius: .5rem;
+}
+
+#customValue {
+    background-color: hsl(185, 41%, 91%);
+    color: var(--Darkgrayishcyan1);
+    width: 85%;
+    text-align: right;
+}
+
+#bill, #numberOfPeople {
+    width: 95%;
+}
+
+/* bottom results/output style */
+.results{
+    margin: 2rem;
+    padding-top: 0;
+    background-color: var(--Verydarkcyan);
+    border-radius: 1rem;
+    height: 260px;
+}
+
+.results-1{
+    padding-top: 1.25rem;
+}
+
+.results-1, .results-2{
+    display: flex;
+    justify-content: space-between;
+}
+
+.amountDescription{
+    margin-left: 2rem;
+    color: var(--Darkgrayishcyan2);
+    
+}
+
+.amountDescription p:nth-child(1) {
+    color: var(--Lightgrayishcyan2);
+    margin-bottom: 0;
+}
+
+.amountDescription p:nth-child(2){
+    margin-top: .25rem;
+}
+
+.output{
+    width: 50%;
+    text-align: right;
+    margin-right: 2rem;
+    color: var(--Strongcyan);
+}
+
+.reset{
+    display: flex;
+    margin: .75rem auto;
+    justify-content: center;
+}
+
+#reset{
+    border:none;
+    text-transform: uppercase;
+    font-family: inherit;
+    padding: .75rem ;
+    width: 80%;
+    border-radius: .5rem;
+    background-color: var(--Strongcyan);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--Verydarkcyan);
+}
+
+*{
+    outline: none !important;
+}
+
+input[type="number"]:focus { 
+    
+    /* border: 1px solid; */
+    border-color: var(--Strongcyan);
+    box-shadow: 0px 0px 10px var(--Strongcyan);
+    outline: none !important;
+ }
+
+input:hover{
+    cursor: pointer;
+}
+
+input[type="button"]:focus, #reset:focus{
+     background-color: var(--Strongcyan);
+     color: var(--Verydarkcyan);
+ }
+
+ /* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#reset:hover{
+    cursor: pointer;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+/* I will use this for alarms */ 
+.alarm{
+ width: 45%;
+ display: inline-block;
+
+ text-align: right;
+ color: red;
+} 
+
+.selectedBtn {
+    background-color: var(--Strongcyan) !important;
+    color: var(--Verydarkcyan) !important;
+}
+
+.ifZero {
+    border-color: red !important;
+    box-shadow: 0px 0px 10px rgb(255, 0, 0) !important;
+}
