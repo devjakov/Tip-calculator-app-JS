@@ -9,3 +9,5 @@ I anticipate I will need to write a couple more projects before my code becomes 
 In the future I will look to making specific functions for collecting data and outputting data. In this one I definitely repeat myself a lot.
 
 Good learning!
+
+Link to pages -> https://devjakov.github.io/Tip-calculator-app-JS/
